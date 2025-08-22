@@ -1,0 +1,4 @@
+#ifndef EPHEMERAL_EPHEMERAL_H
+#define EPHEMERAL_EPHEMERAL_H
+
+#endif
