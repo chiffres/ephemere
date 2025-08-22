@@ -2,6 +2,38 @@
 
 > Une monnaie vivante, conçue pour fluer, pas pour stagner.
 
+
+## Exemple de code
+
+```c++
+#include <ephemeral.h>
+
+int main() {
+    Wallet *from = create_wallet("Willy", 1000.00);
+    Wallet *to = create_wallet("Patrick", 1000.00);
+
+    printf("Solde initial de Willy: %.4f\n", get_current_balance(from));
+
+    printf("\n... 10 secondes d'inactivite ...\n\n");
+    sleep(10); 
+
+    printf("Solde de Willy apres 10s: %.4f (on voit l'evaporation)\n", get_current_balance(from));
+
+    from->pay(from, to, 500);
+
+    printf("Willy a paye 500 a Patrick.\n");
+    printf("Nouveau solde de Willy: %.4f\n", get_current_balance(from));
+    printf("Nouveau solde de Patrick: %.4f\n", get_current_balance(to));
+
+    free(from);
+    free(to);
+
+    return 0;
+}
+```
+
+![img.png](img.png)
+
 ## Philosophie
 
 Le projet **Éphémère** est une exploration radicale de la nature de la valeur. Il propose un modèle de monnaie *
