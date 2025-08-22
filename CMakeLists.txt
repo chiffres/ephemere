@@ -3,6 +3,4 @@ project(ephemeral C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_library(ephemeral STATIC ephemeral.c
-        ephemeral.c
-        ephemeral.h)
+add_library(ephemeral STATIC ephemeral.c)
